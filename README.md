@@ -10,12 +10,11 @@ This project demonstrates a practical implementation of microservices architectu
 - **FastAPI Framework** for high-performance APIs
 - **SystemD Integration** for production deployment
 
-## Architecture
+## Basic Architecture
 
-```
 ┌─────────────────────────────────────────────────────────────────┐
-│                      HOST MACHINE                                │
-│                                                                  │
+│                      HOST MACHINE                               │
+│                                                                 │
 │  ┌─────────────────────┐         ┌─────────────────────┐        │
 │  │   VM1 (server1)     │         │   VM2 (server2)     │        │
 │  │   192.168.29.252    │         │   192.168.29.250    │        │
@@ -23,18 +22,18 @@ This project demonstrates a practical implementation of microservices architectu
 │  │  Student Service ───┼────────►│  Marks Service      │        │
 │  │  Port: 3001         │         │  Port: 3002         │        │
 │  └─────────────────────┘         └─────────────────────┘        │
-│                                                                  │
-│              ▲         Bridged Network      ▲                    │
-│              └──────────────────────────────┘                    │
+│                                                                 │
+│              ▲         Bridged Network      ▲                   │
+│              └──────────────────────────────┘                   │
 └─────────────────────────────────────────────────────────────────┘
 
 
 ## Services
 
-| Service | VM | Port | Responsibility |
-|---------|-----|------|----------------|
-| Student Service | VM1 (192.168.29.252) | 3001 | Manages student info (rollno, name, age) |
-| Marks Service | VM2 (192.168.29.250) | 3002 | Manages student marks/grades |
+Service           VM                     Port     Responsibility 
+
+Student Service   VM1 (192.168.29.252)   3001     Manages student info (rollno, name, age)
+Marks Service     VM2 (192.168.29.250)   3002     Manages student marks/grades 
 
 ### Student Service Endpoints
 - `GET /students` - List all students
@@ -138,14 +137,14 @@ Interactive Swagger UI:
 
 ## Technology Stack
 
-| Component | Technology |
-|-----------|------------|
-| Language | Python 3.10+ |
-| Framework | FastAPI 0.109.0 |
-| Server | Uvicorn 0.27.0 |
-| Validation | Pydantic 2.5.3 |
-| HTTP Client | HTTPX 0.26.0 |
-| OS | Ubuntu Server 22.04 LTS |
+Component    Technology 
+
+Language     Python 3.10+ 
+| Framework  FastAPI 0.109.0 
+| Server     Uvicorn 0.27.0 
+| Validation Pydantic 2.5.3 
+| HTTPClient HTTPX 0.26.0 
+| OS         Ubuntu Server 22.04 LTS 
 
 ## Project Structure
 
