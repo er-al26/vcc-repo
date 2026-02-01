@@ -2,18 +2,18 @@
 
 Manages student marks/grades and provides marks data to other services.
 
-## 📝 Description
+## Description
 
 The Marks Service is responsible for storing and managing student marks. It provides a simple API for CRUD operations on marks data and serves requests from the Student Service.
 
-## 🎯 Responsibilities
+## Responsibilities
 
 - Store and manage marks information
 - Provide CRUD operations for marks
 - Validate marks range (0-100)
 - Respond to inter-service requests from Student Service
 
-## 📊 Data Model
+## Data Model
 
 ```python
 {
@@ -23,7 +23,7 @@ The Marks Service is responsible for storing and managing student marks. It prov
 }
 ```
 
-## 🌐 API Endpoints
+## API Endpoints
 
 ### GET /
 Returns service information
@@ -96,18 +96,18 @@ Create new marks entry
 - 404: Marks not found for given rollno
 - 409: Marks already exist for this student
 
-## 🔧 Configuration
+## Configuration
 
 **IP Address:** 192.168.29.250
 **Port:** 3002
 
-## 📦 Dependencies
+## Dependencies
 
 - fastapi==0.109.0
 - uvicorn[standard]==0.27.0
 - pydantic==2.5.3
 
-## 🚀 Installation
+## Installation
 
 ```bash
 # Create virtual environment
@@ -121,7 +121,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-## 🔄 Service Management
+## Service Management
 
 ```bash
 # Install as systemd service
@@ -137,7 +137,7 @@ sudo systemctl status marks-service
 sudo journalctl -u marks-service -f
 ```
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Health check
@@ -155,11 +155,11 @@ curl -X POST http://localhost:3002/marks \
   -d '{"rollno": "B25AI2116", "marks": 87.5}'
 ```
 
-## 📚 API Documentation
+## API Documentation
 
 Interactive Swagger UI available at: http://192.168.29.250:3002/docs
 
-## 🔗 Inter-Service Communication
+## Inter-Service Communication
 
 This service is called by the Student Service when complete student information is requested. The Student Service makes HTTP GET requests to `/marks/{rollno}` to fetch marks data.
 
@@ -167,7 +167,7 @@ This service is called by the Student Service when complete student information 
 - Student Service (192.168.29.252)
 - Direct client requests
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ### Service won't start
 ```bash
@@ -183,7 +183,7 @@ sudo kill -9 <PID>
 ### Marks validation error
 Ensure marks are between 0 and 100.
 
-## 📊 Data Validation
+## Data Validation
 
 ### Marks Field
 - **Type:** Float
@@ -195,14 +195,14 @@ Ensure marks are between 0 and 100.
 - **Unique:** Yes
 - **Required:** Yes
 
-## 💾 Storage
+## Storage
 
 Currently uses in-memory storage (Python list). In production, this would be replaced with:
 - PostgreSQL
 - MongoDB
 - MySQL
 
-## 🔐 Security
+## Security
 
 Current implementation includes:
 - Input validation via Pydantic
