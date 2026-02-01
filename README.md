@@ -10,24 +10,6 @@ This project demonstrates a practical implementation of microservices architectu
 - **FastAPI Framework** for high-performance APIs
 - **SystemD Integration** for production deployment
 
-## Basic Architecture
-
-┌─────────────────────────────────────────────────────────────────┐
-│                      HOST MACHINE                               │
-│                                                                 │
-│  ┌─────────────────────┐         ┌─────────────────────┐        │
-│  │   VM1 (server1)     │         │   VM2 (server2)     │        │
-│  │   192.168.29.252    │         │   192.168.29.250    │        │
-│  │                     │  HTTP   │                     │        │
-│  │  Student Service ───┼────────►│  Marks Service      │        │
-│  │  Port: 3001         │         │  Port: 3002         │        │
-│  └─────────────────────┘         └─────────────────────┘        │
-│                                                                 │
-│              ▲         Bridged Network      ▲                   │
-│              └──────────────────────────────┘                   │
-└─────────────────────────────────────────────────────────────────┘
-
-
 ## Services
 
 Service           VM                     Port     Responsibility 
