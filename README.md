@@ -27,9 +27,7 @@ This project demonstrates a practical implementation of microservices architectu
 │              ▲         Bridged Network      ▲                    │
 │              └──────────────────────────────┘                    │
 └─────────────────────────────────────────────────────────────────┘
-```
 
- For detailed architecture diagrams and design documentation, see [ARCHITECTURE.md](ARCHITECTURE.md)
 
 ## Services
 
