@@ -208,7 +208,7 @@ To find current IP, run `ip addr show` on each VM and update the configuration a
 **Allabaksh S**
 - Roll No: M25AI2123
 - Institution: IIT Jodhpur
-- Program: B.Tech in AI
+- Program: M.Tech in AI
 
 ## License
 
