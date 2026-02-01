@@ -2,18 +2,18 @@
 
 Manages student information and provides aggregated student+marks data through inter-service communication.
 
-## 📝 Description
+## Description
 
 The Student Service is responsible for managing student basic information (roll number, name, age) and serves as the entry point for retrieving complete student data by calling the Marks Service.
 
-## 🎯 Responsibilities
+## Responsibilities
 
 - Store and manage student information
 - Provide CRUD operations for students
 - Aggregate student and marks data from Marks Service
 - Serve as the primary API for client applications
 
-## 📊 Data Model
+## Data Model
 
 ```python
 {
@@ -24,7 +24,7 @@ The Student Service is responsible for managing student basic information (roll 
 }
 ```
 
-## 🌐 API Endpoints
+## API Endpoints
 
 ### GET /
 Returns service information
@@ -108,7 +108,7 @@ Get complete student information including marks
 
 **Note:** This endpoint demonstrates inter-service communication by calling the Marks Service.
 
-## 🔧 Configuration
+## Configuration
 
 **IP Address:** 192.168.29.252
 **Port:** 3001
@@ -116,14 +116,14 @@ Get complete student information including marks
 
 To change the Marks Service URL, edit `MARKS_SERVICE_URL` in `main.py`.
 
-## 📦 Dependencies
+## Dependencies
 
 - fastapi==0.109.0
 - uvicorn[standard]==0.27.0
 - pydantic==2.5.3
 - httpx==0.26.0
 
-## 🚀 Installation
+## Installation
 
 ```bash
 # Create virtual environment
@@ -137,7 +137,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-## 🔄 Service Management
+## Service Management
 
 ```bash
 # Install as systemd service
@@ -153,7 +153,7 @@ sudo systemctl status student-service
 sudo journalctl -u student-service -f
 ```
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Health check
@@ -174,11 +174,11 @@ curl -X POST http://localhost:3001/students \
   -d '{"rollno": "B25AI2116", "name": "Test", "age": 17}'
 ```
 
-## 📚 API Documentation
+## API Documentation
 
 Interactive Swagger UI available at: http://192.168.29.252:3001/docs
 
-## 🔗 Inter-Service Communication
+## Inter-Service Communication
 
 This service communicates with the Marks Service to provide complete student information. The `/students/{rollno}/complete` endpoint:
 
@@ -190,7 +190,7 @@ This service communicates with the Marks Service to provide complete student inf
 **Timeout:** 5 seconds
 **Error Handling:** Returns student data without marks if Marks Service is unavailable
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ### Service won't start
 ```bash
